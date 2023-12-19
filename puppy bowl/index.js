@@ -7,7 +7,6 @@ window.addEventListener("hashchange", function () {
 });
 
 function render() {
-  console.log(players);
   span.innerHTML = players.length;
   const hash = window.location.hash;
   const id = hash.slice(1) * 1;
@@ -40,7 +39,6 @@ async function fetchPlayers() {
     "https://fsa-puppy-bowl.herokuapp.com/api/2309-ftb-et-am/players"
   );
   const json = await response.json();
-  console.log(json);
   players = json.data.players;
   render();
 }
